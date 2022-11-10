@@ -1,8 +1,8 @@
-<main>
+<main class="dark:bg-black">
 	<section>
 		<div>
-			<h1>Welcome to SvelteKit</h1>
-			<p>Advenccreは、</p>
+			<h1>Welcome to our adventure</h1>
+			<p>ああ</p>
 		</div>
 	</section>
 	<section>
