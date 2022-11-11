@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Head from '$lib/components/Head.svelte';
+	import Head from '../components/Head.svelte';
 	function outClick(node: Node) {
 		const handleClick = (event: any) => {
 			if (!node.contains(event.target) && open == true) {
@@ -39,10 +39,12 @@
 	<div
 		class="w-fill z-40 flex justify-between border-b-4 border-solid border-zinc-500 bg-white px-6 py-4 dark:bg-slate-800"
 	>
-		<div class="flex items-center">
-			<img src="/src/lib/components/Advenccre.svg" alt="" width="48" />
-			<p class="ml-2 text-xl font-bold">Advenccre</p>
-		</div>
+		<a href="/">
+			<div class="flex items-center">
+				<img src="/src/lib/components/Advenccre.svg" alt="" width="48" />
+				<p class="ml-2 text-xl font-bold">Advenccre</p>
+			</div>
+		</a>
 		<ul class="hidden items-center md:flex">
 			{#each menu_list as menu}
 				<li class="mx-4">
@@ -67,7 +69,7 @@
 						: 'translate-x-96 duration-300'} relative my-6 rounded-lg bg-slate-200 px-4 py-2 text-right transition-all"
 					style:transition-delay="{open ? 76 * i : 0}ms"
 				>
-					<a class="text-xl" href={menu.href}>{menu.title}</a>
+					<a class="text-xl" href={menu.href} on:click={() => (open = !open)}>{menu.title}</a>
 				</li>
 			{/each}
 		</ul>

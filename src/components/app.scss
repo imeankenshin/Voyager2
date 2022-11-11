@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(../fonts/SF-Compact/Text/SF-Compact-Text.css);
-@import url(../fonts/SF-Compact/Italic/SF-Compact-Italic.css);
-@import url(../fonts/SF-Mono/SF-Mono.css);
+@import url(/lib/fonts/SF-Compact/Text/SF-Compact-Text.css);
+@import url(/lib/fonts/SF-Compact/Italic/SF-Compact-Italic.css);
+@import url(/lib/fonts/SF-Mono/SF-Mono.css);
 
 :root {
 	font-family: 'SF Compact', 'Osaka';
@@ -94,3 +94,6 @@ code {
 	color: #666;
 }
 /* Text Style End */
+body {
+	@apply dark:bg-black;
+}
