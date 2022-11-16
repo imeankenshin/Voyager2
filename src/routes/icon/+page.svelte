@@ -1,7 +1,9 @@
 <script lang="ts">
-	import Card from 'src/components/icon/Card.svelte';
+	import Card from '../../components/Card/Card.svelte';
+	import Aco from '../../components/Acordion/Aco.svelte';
 </script>
 
 <main>
-	<Card title="title" />
+	<Card />
+	<Aco title="text here">yes</Aco>
 </main>
