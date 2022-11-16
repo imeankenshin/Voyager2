@@ -41,25 +41,29 @@
 	>
 		<a href="/">
 			<div class="flex items-center">
-				<img src="/src/lib/components/Advenccre.svg" alt="" width="48" />
+				<img src="/src/components/Advenccre.svg" alt="" width="48" />
 				<p class="ml-2 text-xl font-bold">Advenccre</p>
 			</div>
 		</a>
-		<ul class="hidden items-center md:flex">
-			{#each menu_list as menu}
-				<li class="mx-4">
-					<a class="text-xl" href={menu.href}>{menu.title}</a>
-				</li>
+		<div class="hidden items-center md:flex" role="tablist" aria-label="top-tab">
+			{#each menu_list as menu, i}
+				<a
+					aria-selected={i == 0 ? true : false}
+					class="mx-3 text-xl"
+					role="tab"
+					tabindex={i == 0 ? 0 : -1}
+					href={menu.href}>{menu.title}</a
+				>
 			{/each}
-		</ul>
-		<button class="md:hidden" on:click={() => (open = !open)}>Toggle</button>
+		</div>
+		<button class="md:hidden" type="button" on:click={() => (open = !open)}>Toggle</button>
 	</div>
 
 	<nav
 		use:outClick
 		class="{open
 			? 'right-0 duration-500'
-			: '-right-72 duration-300'} fixed top-0 z-50 block h-full w-72 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
+			: '-right-72 duration-300 select-none'} fixed top-0 z-50 block h-full w-72 border-l-4 border-gray-300 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
 	>
 		<ul>
 			{#each menu_list as menu, i}
@@ -82,3 +86,6 @@
 	/>
 </header>
 <slot><!-- optional fallback --></slot>
+
+<style>
+</style>
