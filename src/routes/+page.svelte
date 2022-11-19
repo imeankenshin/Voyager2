@@ -1,3 +1,8 @@
+<script lang="ts">
+	import PageConfig from '../components/PageConfig.svelte';
+</script>
+
+<PageConfig title="" />
 <main class="dark:bg-black">
 	<section>
 		<div>
