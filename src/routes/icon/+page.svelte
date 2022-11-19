@@ -3,6 +3,7 @@
 	import Aco from '../../components/Acordion/Aco.svelte';
 	import PageConfig from '../../components/PageConfig.svelte';
 	import Dialog from '../../components/Dialog/Dialog.svelte';
+	let open: boolean = false;
 </script>
 
 <PageConfig title="icon" />
@@ -14,7 +15,8 @@
 			<p>foo foo foo foo</p>
 		</div>
 	</Aco>
-	<Dialog open
+	<button on:click={() => (open = !open)}>click hrer</button>
+	<Dialog {open}
 		><h4>Are you sure you really want to delete this project?</h4>
 		<p>you cannot fix this, ANYMORE!</p></Dialog
 	>
