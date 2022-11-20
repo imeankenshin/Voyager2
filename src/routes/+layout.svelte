@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Head from '../components/Head.svelte';
+	import { scrollBlock } from '../components/script/scrollBlock';
 	function outClick(node: Node) {
 		const handleClick = (event: any) => {
 			if (!node.contains(event.target) && open == true) {
@@ -15,16 +16,10 @@
 	const menu_list: { href: string; title: string }[] = [
 		{ href: '/', title: 'home' },
 		{ href: '/icon', title: 'icon' },
-		{ href: '', title: 'components' },
+		{ href: '/', title: 'components' },
 		{ href: '/docs', title: 'docs' }
 	];
-	$: if (typeof document !== 'undefined') {
-		if (open) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
-	}
+	$: scrollBlock(open);
 	if (typeof window !== 'undefined') {
 		window.addEventListener('keydown', (event: KeyboardEvent) => {
 			if (open && event.key == 'Escape') {
@@ -35,25 +30,27 @@
 </script>
 
 <Head />
-<header class="sticky left-0 top-0">
+<header class="sticky left-0 top-0" role="navigation">
 	<div
 		class="w-fill z-40 flex justify-between border-b-4 border-solid border-zinc-500 bg-white px-6 py-4 dark:bg-slate-800"
 	>
 		<a href="/">
 			<div class="flex items-center">
-				<img src="/src/components/Advenccre.svg" alt="" width="48" />
+				<img src="/src/components/Advenccre.svg" alt="" width="48" height="48" />
 				<p class="ml-2 text-xl font-bold">Advenccre</p>
 			</div>
 		</a>
-		<div class="hidden items-center md:flex" role="tablist" aria-label="top-tab">
+		<div class="hidden items-center md:flex" role="listbox" aria-label="urls">
 			{#each menu_list as menu, i}
 				<a
-					aria-selected={i == 0 ? true : false}
 					class="mx-3 text-xl"
-					role="tab"
 					tabindex={i == 0 ? 0 : -1}
-					href={menu.href}>{menu.title}</a
+					href={menu.href}
+					role="option"
+					aria-selected={i == 0 ? true : false}
 				>
+					{menu.title}
+				</a>
 			{/each}
 		</div>
 		<button class="md:hidden" type="button" on:click={() => (open = !open)}>Toggle</button>

@@ -1,11 +1,16 @@
 <script lang="ts">
-	import { scrollBlock } from '../func/scrollBlock';
+	import { scrollBlock } from '../script/scrollBlock';
 	// import { clickOutside } from '../func/clickOutside';
-	function clickOutside(node: HTMLElement) {
+	export let open: boolean = false;
+	export let closeHandler: (() => void) | undefined = undefined;
+
+	function clickOutside(node: Node) {
 		const handleClick = (event: any) => {
-			if (!node.contains(event.target)) {
+			if (!node.contains(event.target) && open) {
 				node.dispatchEvent(new CustomEvent('outclick'));
-				open = !open;
+				if (closeHandler !== undefined) {
+					closeHandler();
+				}
 			}
 		};
 
@@ -13,39 +18,43 @@
 	}
 
 	$: scrollBlock(open);
-	type size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto';
-	enum sizes {
-		xs = 10
+
+	if (typeof window !== 'undefined') {
+		window.addEventListener('keydown', (event) => {
+			if (open && event.key == 'Escape') {
+				if (closeHandler !== undefined) {
+					closeHandler();
+				}
+			}
+		});
 	}
-	export let size: size = 'auto';
-	export let open: boolean = false;
 </script>
 
 <div
 	class="{open
-		? 'opacity-1'
-		: ' opacity-0'} fixed top-0 left-0 flex h-full w-full place-items-center justify-center bg-black bg-opacity-40 transition-all"
+		? 'opacity-1 animate-show'
+		: ' opacity-0 animate-dissapier pointer-events-none'} fixed top-0 left-0 flex h-full w-full place-items-center justify-center bg-black bg-opacity-40 transition-all"
 >
 	<div
 		use:clickOutside
 		class="{open
 			? ' scale-100'
-			: ' scale-90'} dialog_body w-fill m-8 flex h-60 w-full max-w-3xl flex-col overflow-hidden rounded-lg bg-white p-4 transition-all dark:bg-gray-700"
+			: ' scale-90 pointer-events-none'} dialog_body w-fill m-8 flex h-60 w-full max-w-3xl flex-col overflow-hidden rounded-lg bg-white p-4 transition-all dark:bg-gray-700"
 	>
 		<slot />
 	</div>
 </div>
 
 <style lang="scss">
-	@keyframes in {
-		from {
-			transform: translateY(100vh);
-		}
-		to {
-			transform: translateY(0);
-		}
-	}
-	.dialog_body {
-		animation: in 0.2s cubic-bezier(0.3, 0.9, 0.4, 1) 1;
-	}
+	// @keyframes in {
+	// 	from {
+	// 		display: none;
+	// 	}
+	// 	to {
+	// 		display: block;
+	// 	}
+	// }
+	// .dialog_body {
+	// 	animation: in 150ms cubic-bezier(0.3, 0.9, 0.4, 1) 1;
+	// }
 </style>
