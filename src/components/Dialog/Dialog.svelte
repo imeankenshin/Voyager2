@@ -2,7 +2,9 @@
 	import { scrollBlock } from '../script/scrollBlock';
 	// import { clickOutside } from '../func/clickOutside';
 	export let open: boolean = false;
+	let className: string = '';
 	export let closeHandler: (() => void) | undefined = undefined;
+	export { className as class };
 
 	function clickOutside(node: Node) {
 		const handleClick = (event: any) => {
@@ -37,24 +39,10 @@
 >
 	<div
 		use:clickOutside
-		class="{open
+		class="{className}{open
 			? ' scale-100'
-			: ' scale-90 pointer-events-none'} dialog_body w-fill m-8 flex h-60 w-full max-w-3xl flex-col overflow-hidden rounded-lg bg-white p-4 transition-all dark:bg-gray-700"
+			: ' scale-90 pointer-events-none'} dialog_body w-fill m-8 flex w-full max-w-3xl flex-col overflow-hidden rounded-lg bg-white p-4 transition-all dark:bg-gray-700"
 	>
 		<slot />
 	</div>
 </div>
-
-<style lang="scss">
-	// @keyframes in {
-	// 	from {
-	// 		display: none;
-	// 	}
-	// 	to {
-	// 		display: block;
-	// 	}
-	// }
-	// .dialog_body {
-	// 	animation: in 150ms cubic-bezier(0.3, 0.9, 0.4, 1) 1;
-	// }
-</style>

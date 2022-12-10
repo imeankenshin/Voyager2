@@ -10,6 +10,7 @@
 	<div class={className}>
 		<button
 			on:click={() => (toggle = !toggle)}
+			type="buttonj"
 			class="outline-white-500 flex w-full justify-between px-3 py-2 outline-2 focus-visible:outline-4"
 		>
 			<p>{title}</p>
