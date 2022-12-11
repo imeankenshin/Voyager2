@@ -1,0 +1,58 @@
+---
+interface Props{
+  desc: string | undefined;
+  title: string
+  pageType: string
+}
+const themeColor:string = "#94a3b8"
+const {desc,title,pageType} = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/image/Advenccre.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={desc} />
+    <meta name="msapplication-TileColor" content={themeColor}>
+    <meta name="theme-color" content={themeColor}/>
+    <meta property="og:title" content={title + ' - Advenccre'}>
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content="https://advenccre.design">
+		<title>{title + ' - Advenccre'}</title>
+    <style lang="css">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @font-face {
+        font-family: 'PermanentMarker';
+        font-weight: 600;
+        src: url("/font/PermanentMarker-Regular.ttf");
+      }
+      @layer components {
+        .font-marker {
+          font-family: "PermanentMarker";
+        }
+      }
+    </style>
+	</head>
+  <body>
+    <header>
+      <nav class="sticky top-0 flex justify-between left-0 w-full bg-slate-400 px-4 py-3">
+        <a class="logo flex items-center" href="/">
+          <img class="h-10 mr-2 translate-y-[2px]" src="/image/Advenccre.svg" alt="Advenccre icon">
+          <span class="font-semibold text-2xl font-marker">Advenccre</span>
+        </a>
+        <ul class="flex items-center [&>*]:mx-3 [&>*]:font-marker [&>*]:text-lg">
+          <li><a href="/">home</a></li>
+          <li><a href="/docs">docs</a></li>
+          <li><a href="/catalog">catalog</a></li>
+          <li><a href="/components">components</a></li>
+        </ul>
+      </nav>
+    </header>
+      <slot></slot>
+  </body>
+</html>
