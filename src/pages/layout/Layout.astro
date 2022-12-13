@@ -1,4 +1,7 @@
 ---
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+
 interface Props{
   desc: string | undefined;
   title: string
@@ -20,39 +23,14 @@ const {desc,title,pageType} = Astro.props
     <meta property="og:title" content={title + ' - Advenccre'}>
     <meta property="og:type" content={pageType} />
     <meta property="og:url" content="https://advenccre.design">
-		<title>{title + ' - Advenccre'}</title>
-    <style lang="css">
-      @tailwind base;
-      @tailwind components;
-      @tailwind utilities;
-
-      @font-face {
-        font-family: 'PermanentMarker';
-        font-weight: 600;
-        src: url("/font/PermanentMarker-Regular.ttf");
-      }
-      @layer components {
-        .font-marker {
-          font-family: "PermanentMarker";
-        }
-      }
+    <style>
+      @import "./index.css";
     </style>
+		<title>{title + ' - Advenccre'}</title>
 	</head>
-  <body>
-    <header>
-      <nav class="sticky top-0 flex justify-between left-0 w-full bg-slate-400 px-4 py-3">
-        <a class="logo flex items-center" href="/">
-          <img class="h-10 mr-2 translate-y-[2px]" src="/image/Advenccre.svg" alt="Advenccre icon">
-          <span class="font-semibold text-2xl font-marker">Advenccre</span>
-        </a>
-        <ul class="flex items-center [&>*]:mx-3 [&>*]:font-marker [&>*]:text-lg">
-          <li><a href="/">home</a></li>
-          <li><a href="/docs">docs</a></li>
-          <li><a href="/catalog">catalog</a></li>
-          <li><a href="/components">components</a></li>
-        </ul>
-      </nav>
-    </header>
-      <slot></slot>
+  <body class="dark:bg-slate-800 scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40">
+    <Header/>
+    <slot></slot>
+    <Footer/>
   </body>
 </html>

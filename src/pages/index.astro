@@ -1,15 +1,18 @@
 ---
+import Layout from "./layout/Layout.astro";
+import Card from "../components/Card/Card.svelte";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout title="HomePage" desc="welcome!" pageType="home">
+	<main class="[&>section]:h-screen">
+		<section class="text-center grid place-items-center">
+			<div class="flex flex-col items-center">
+				<img src="/image/Advenccre.svg" alt="bandana" class="w-80 ">
+				<h1 class=" animate-fadein text-8xl font-marker font-semibold mb-4 -mt-20">Advenccre</h1>
+				<p>The components that you need in today</p>
+			</div>
+		</section>
+		<section></section>
+	</main>
+</Layout>
