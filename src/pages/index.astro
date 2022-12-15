@@ -1,20 +1,21 @@
 ---
 import Layout from "./layout/Layout.astro";
+import Title from "./components/Title.svelte";
 import Card from "../components/Card/Card.svelte";
 ---
 
 <Layout title="HomePage" desc="welcome!" pageType="home">
-	<main class="[&>section]:h-screen [&>section]:min-h-[26rem]">
-		<section class="text-center grid place-items-center">
+	<main class="[&>section]:h-[115vh]">
+		<section class="max-h-screen text-center grid place-items-center">
 			<div class="flex flex-col items-center">
 				<img src="/image/Advenccre.svg" alt="bandana" class="w-72 select-none">
 				<h1 class="animate-fadein text-7xl sm:text-8xl font-marker font-semibold mb-4 -mt-16">Advenccre</h1>
-				<p class="animate-fadein delay-200">The components that you need in today</p>
+				<p class="animate-fadein delay-200">It is a everything you need, and everything you want as frontend</p>
 			</div>
 		</section>
 		<section class="grid grid-cols-2">
 			<div class="m-6 h-full grid items-center content-center">
-				<h2 class="text-4xl font-marker mb-4 animate-fadeinRight">Modern idol with Simple shape</h2>
+				<h2 class="text-5xl font-marker mb-4 animate-fadeinRight"><Title label="Everything that frontend need." /></h2>
 				<p>hello</p>
 			</div>
 		</section>
