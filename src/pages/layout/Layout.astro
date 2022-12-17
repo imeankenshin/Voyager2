@@ -28,7 +28,7 @@ const {desc,title,pageType} = Astro.props
     </style>
 		<title>{title + ' - Advenccre'}</title>
 	</head>
-  <body class="dark:bg-slate-800 scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 scroll:w-2">
+  <body class="dark:bg-slate-800 [&>main]:min-h-screen scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 scroll:w-2">
     <Header/>
     <slot></slot>
     <Footer/>
