@@ -17,7 +17,7 @@
       title: "catalog"
     },
     {
-      link: "https:/components.advenccre.design",
+      link: "https:/components.advencure.design",
       title: "components"
     },
   ]
@@ -28,7 +28,7 @@
   <nav class="z-50 grid [&_*]:outline-none grid-cols-2 fixed top-0 left-0 w-full justify-between bg-gradient-to-b from-white dark:from-slate-800 to-transparent px-4 py-3">
     <a class="logo flex items-center" href="/">
       <img class="h-10 mr-2 translate-y-[2px] hover:animate-bounce" src="/image/Advenccre.svg" alt="Advenccre icon">
-      <span class="font-semibold text-lg sm:text-2xl font-marker hover:animate-pulse">The Advenccre</span>
+      <span class="font-semibold text-2xl font-marker hover:animate-pulse">Advencure</span>
     </a>
     <Menu {list} class="hidden md:flex md:justify-end items-center" />
     <div class="md:hidden items-center flex justify-end">

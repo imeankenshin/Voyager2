@@ -1,13 +1,12 @@
 ---
 import Layout from "../layout/Layout.astro";
-import IconCard from "./components/IconCard.svelte";
-import { useKonami } from "../../components/script/useKonami";
 import Main from "./components/Main.svelte";
+import ComingSoon from "../layout/ComingSoon.astro";
 
-useKonami(()=>alert("konami"))
 ---
 <Layout desc="This page is catalog of Advenccre svg icon." title="SVG Catalog" pageType="list">
   <Main client:load />
+  <ComingSoon />
   <script>
     const searchInput = document.getElementById("search")
     window.addEventListener("keyup",(e)=>{
