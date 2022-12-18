@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import IconCard from "./IconCard.svelte";
   let value = "";
-  $: console.log(value);
+  import { useKonami } from "../../../components/script/useKonami";
 </script>
 
 <main>
