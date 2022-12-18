@@ -1,6 +1,6 @@
 ---
 import Footer from './Footer.astro';
-import Header from './Header.astro';
+import Header from './Header.svelte';
 
 interface Props{
   desc: string | undefined;
@@ -28,8 +28,8 @@ const {desc,title,pageType} = Astro.props
     </style>
 		<title>{title + ' - Advenccre'}</title>
 	</head>
-  <body class="dark:bg-slate-800 [&>main]:min-h-screen scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 scroll:w-2">
-    <Header/>
+  <body class="dark:bg-slate-800 [&_main]:min-h-screen scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 scroll:w-2">
+    <Header client:load/>
     <slot></slot>
     <Footer/>
   </body>
