@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'PermanentMarker';
-  font-weight: 600;
-  src: url("/font/PermanentMarker-Regular.ttf");
+	font-family: 'PermanentMarker';
+	font-weight: 600;
+	src: url('/font/PermanentMarker-Regular.ttf');
 }
 :root {
-  @apply dark:text-white;
+	@apply dark:text-white;
 }

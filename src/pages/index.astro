@@ -1,20 +1,25 @@
----
-import Layout from "./layout/Layout.astro";
----
+--- import Layout from "./layout/Layout.astro"; ---
 
 <Layout title="HomePage" desc="welcome!" pageType="home">
 	<main class="[&>section]:h-[115vh]">
-		<section class="max-h-screen min-h-[28rem] text-center grid place-items-center">
+		<section class="grid max-h-screen min-h-[28rem] place-items-center text-center">
 			<div class="flex flex-col items-center">
-				<img src="/image/Advenccre.svg" alt="bandana" class=" max-w-[18rem] w-4/5 select-none">
-				<h1 class="animate-fadein text-5xl sm:text-8xl font-marker font-semibold mb-4 -mt-16">Advencure</h1>
+				<img src="/image/Advenccre.svg" alt="bandana" class=" w-4/5 max-w-[18rem] select-none" />
+				<h1 class="mb-4 -mt-16 animate-fadein font-marker text-5xl font-semibold sm:text-8xl">
+					Advencure
+				</h1>
 				<p class="animate-fadein delay-200">Time to start your develop journey.</p>
 			</div>
 		</section>
 		<section class="grid grid-cols-2">
-			<div class="m-6 h-full grid items-center content-center">
-				<h2 class="text-5xl font-marker mb-4 animate-fadeinRight">Everything that frontend need.</h2>
+			<div class="m-6 grid h-full content-center items-center">
+				<h2 class="mb-4 animate-fadeinRight font-marker text-5xl">
+					Everything that frontend need.
+				</h2>
 				<p>hello</p>
+				<span
+					class="m-4 grid h-5 w-5 cursor-pointer place-items-center rounded-full bg-rose-500 before:-z-10 before:h-5 before:w-5 before:animate-ping before:rounded-full before:border-2 before:border-rose-500"
+				/>
 			</div>
 		</section>
 	</main>

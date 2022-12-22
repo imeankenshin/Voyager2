@@ -1,8 +1,8 @@
-<script lang="ts">
-	export let open: boolean = false;
-
-	function outClick(node: Node) {
-		const handleClick = (event: any) => {
+<script lang="js">
+	export let open = false;
+	export let id = 'sidebar';
+	function outClick(node) {
+		const handleClick = (event) => {
 			if (!node.contains(event.target) && open == true) {
 				node.dispatchEvent(new CustomEvent('outclick'));
 				open = !open;
@@ -21,11 +21,13 @@
 </script>
 
 <nav
+	{id}
+	e
 	tabindex="-1"
 	use:outClick
 	class="{open
 		? 'right-0 duration-500'
-		: '-right-72 duration-300'} fixed top-0 z-50 block h-full w-64 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
+		: '-right-72 duration-300'} fixed top-0 z-50 block h-full w-64 border-l-2 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
 >
 	<slot><!-- optional fallback --></slot>
 </nav>
