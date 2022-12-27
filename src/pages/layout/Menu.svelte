@@ -4,9 +4,9 @@
 	export { className as class };
 </script>
 
-<ul class={className + ' '}>
+<ul role="menubar" class={className + ' '}>
 	{#each list as i}
-		<li>
+		<li role="menuitem">
 			<a
 				href={i.link}
 				class="mx-3 font-marker text-lg transition-all hover:text-red-500 focus:text-red-500"
