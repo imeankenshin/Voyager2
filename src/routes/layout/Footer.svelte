@@ -17,9 +17,11 @@
 			SNS:
 		</p>
 		<ul class="grid min-w-[10rem] grid-cols-3 grid-rows-3 ">
-			<li><a href="https://instagram.com/LinoRino_off" target="_blank">Instagram</a></li>
-			<li><a href="https://github.com/LinoRino" target="_blank">Github</a></li>
-			<li><a href="http://linorino.net">Portfolio</a></li>
+			<li>
+				<a href="https://instagram.com/LinoRino_off" target="_blank" rel="noreferrer">Instagram</a>
+			</li>
+			<li><a href="https://github.com/LinoRino" target="_blank" rel="noreferrer">Github</a></li>
+			<li><a href="https://linorino.net">Portfolio</a></li>
 		</ul>
 	</div>
 	<ul class="flex justify-end sm:col-span-3 [&>*]:ml-5">

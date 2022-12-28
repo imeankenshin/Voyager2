@@ -7,7 +7,6 @@
 </script>
 
 <svelte:head>
-	<meta name="viewport" content="width=device-width" />
 	<meta name="description" content={'desc'} />
 	<meta name="msapplication-TileColor" content={themeColor} />
 	<meta name="theme-color" content={themeColor} />
