@@ -1,11 +1,8 @@
----
-import Layout from "../layout/Layout.astro"; import Main from "./components/Main.svelte"; import
-ComingSoon from "../layout/ComingSoon.astro"; 
----
-<Layout desc="This page is catalog of Advenccre svg icon." title="SVG Catalog" pageType="list">
-	<Main client:load />
-	<ComingSoon />
-	<script>
+<script>
+	import Main from './components/Main.svelte';
+	import ComingSoon from '../layout/ComingSoon.svelte';
+	import { onMount } from 'svelte';
+	onMount(() => {
 		const searchInput = document.getElementById('search');
 		window.addEventListener('keyup', (e) => {
 			const searchCommnad_Sharp = e.key == '/' && searchInput;
@@ -19,5 +16,8 @@ ComingSoon from "../layout/ComingSoon.astro";
 				searchInput.focus();
 			}
 		});
-	</script>
-</Layout>
+	});
+</script>
+
+<Main />
+<ComingSoon />

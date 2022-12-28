@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Menu from './Menu.svelte';
-	import Drawer from '../../components/Drawer/Drawer.svelte';
+	import Drawer from '../../lib/components/Drawer/Drawer.svelte';
 	let open: boolean = false;
 	const list: { link: string; title: string }[] = [
 		{

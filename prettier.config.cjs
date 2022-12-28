@@ -3,9 +3,8 @@ module.exports = {
 	singleQuote: true,
 	trailingComma: 'none',
 	printWidth: 100,
-	plugins: [require('prettier-plugin-svelte'), require('prettier-plugin-tailwindcss'),require('prettier-plugin-astro')],
+	plugins: [require('prettier-plugin-svelte'), require('prettier-plugin-tailwindcss')],
 	pluginSearchDirs: ['.'],
 	overrides: [{ files: '*.{astro,html,svelte,js,ts}', options: { parser: 'svelte' } }],
 	tailwindConfig: './tailwind.config.cjs'
 };
-y

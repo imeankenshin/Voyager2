@@ -6,5 +6,5 @@ node_modules
 .env
 .env.*
 !.env.example
-lib/fonts
-/pribate
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

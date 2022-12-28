@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Card from '../../../components/Card/Card.svelte';
+	import Card from '../../../lib/components/Card/Card.svelte';
 	export let icon: string | undefined | null = '';
 	export let title: string = '';
 </script>

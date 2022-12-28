@@ -1,8 +1,8 @@
-<script lang="js">
+<script lang="ts">
 	export let open = false;
 	export let id = 'sidebar';
-	function outClick(node) {
-		const handleClick = (event) => {
+	function outClick(node: any) {
+		const handleClick = (event: Event) => {
 			if (!node.contains(event.target) && open == true) {
 				node.dispatchEvent(new CustomEvent('outclick'));
 				open = !open;
@@ -22,7 +22,6 @@
 
 <nav
 	{id}
-	e
 	tabindex="-1"
 	use:outClick
 	class="{open
