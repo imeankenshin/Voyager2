@@ -8,6 +8,17 @@
 	src: url('/font/PermanentMarker-Regular.ttf');
 }
 
+html {
+	@apply scroll:w-3 scroll:bg-transparent scroll-tb:bg-slate-300 scroll-tb:bg-opacity-50 dark:bg-slate-800;
+}
+
+:root {
+	@apply dark:text-white;
+}
+
+p {
+	@apply text-lg;
+}
 kbd {
 	@apply rounded-md border-2 border-b-4 border-gray-300 bg-gray-100 py-1 px-2 dark:border-gray-600 dark:bg-gray-500;
 }
