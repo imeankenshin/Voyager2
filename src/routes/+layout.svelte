@@ -16,7 +16,7 @@
 	<title>{title + ' - Advenccre'}</title>
 </svelte:head>
 <div
-	class="scroll:w-2 scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 dark:bg-slate-800 [&_main]:min-h-screen"
+	class="scroll:w-2 scroll:bg-transparent scroll-tb:bg-gray-400 scroll-tb:bg-opacity-40 dark:bg-slate-700 [&_main]:min-h-screen"
 >
 	<Header />
 	<slot />
