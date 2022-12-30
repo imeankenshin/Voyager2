@@ -1,4 +1,4 @@
-export function useKonami(func: void){
+export function useKonami(func: ()=>any){
   if(typeof document !== "undefined"){
     const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiCodePosition = 0;
@@ -10,6 +10,7 @@ export function useKonami(func: void){
         console.log(key)
         if (konamiCodePosition === konamiCode.length) {
           // KONAMIコマンドが検出されたときの処理
+          func();
           konamiCodePosition = 0;
         }
       } else {
