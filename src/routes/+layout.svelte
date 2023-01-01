@@ -1,9 +1,10 @@
 <script lang="ts">
 	import Footer from './layout/Footer.svelte';
 	import Header from './layout/Header.svelte';
+	import { getDevice } from '$lib/components/script/getDevice';
 	export let title: string = 'Home';
 	export let pageType: string = 'home';
-	const themeColor: string = '#94a3b8';
+	const themeColor: string = 'transparent';
 </script>
 
 <svelte:head>
@@ -20,6 +21,7 @@
 >
 	<Header />
 	<slot />
+	{getDevice()}
 	<Footer />
 </div>
 

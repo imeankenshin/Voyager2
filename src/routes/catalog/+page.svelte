@@ -25,7 +25,7 @@
 	<div role="search" class="flex justify-center py-24">
 		<label
 			for="search"
-			class="flex w-full max-w-2xl items-center rounded-lg px-4 py-3  outline outline-2 outline-gray-400 focus-within:outline-[3px] focus-within:outline-sky-400"
+			class="mx-6 flex w-full max-w-2xl items-center rounded-lg px-4 py-3  outline outline-2 outline-gray-400 focus-within:outline-[3px] focus-within:outline-sky-400"
 		>
 			<span class="mr-4 flex h-7 w-7 items-center dark:[&_*]:fill-white">
 				<svg

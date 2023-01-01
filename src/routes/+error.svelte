@@ -18,6 +18,6 @@
 				>WOW! YOU ARE SUCH BRILLIANT!!!!! CLICK ME!!!!!!!!!!</a
 			>
 		{/if}
-		<p class="text-white dark:text-slate-800">↑ ↑ ↓ ↓ ← → ← → b a</p>
+		<p class="text-white dark:text-slate-700">↑ ↑ ↓ ↓ ← → ← → b a</p>
 	</div>
 </main>
