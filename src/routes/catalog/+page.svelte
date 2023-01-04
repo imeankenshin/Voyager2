@@ -1,6 +1,8 @@
 <script>
 	import ComingSoon from '../layout/ComingSoon.svelte';
+	import PageDesc from '../layout/PageDesc.svelte';
 	import { onMount } from 'svelte';
+
 	onMount(() => {
 		const searchInput = document.getElementById('search');
 		window.addEventListener('keyup', (e) => {
@@ -21,6 +23,13 @@
 	let value = '';
 </script>
 
+<PageDesc
+	content={{
+		title: 'Catalog',
+		desc: 'Search Advenccre icons that you want.',
+		type: 'article'
+	}}
+/>
 <main>
 	<div role="search" class="flex justify-center py-24">
 		<label
