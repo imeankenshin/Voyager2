@@ -34,8 +34,8 @@
 	tabindex="-1"
 	use:outClick
 	class="{open
-		? 'right-0 mr-3 duration-500'
-		: '-right-72 duration-300'} fixed top-0 z-50 block h-full w-64 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
+		? 'right-0 duration-500'
+		: '-right-72 -mr-3 duration-300'} fixed top-0 z-50 block h-full w-64 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
 >
 	<slot><!-- optional fallback --></slot>
 </nav>

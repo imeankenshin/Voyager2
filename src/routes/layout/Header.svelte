@@ -39,7 +39,7 @@
 			<button
 				type="button"
 				class=" m-3 h-9 w-9 rounded text-center font-['SF_Pro'] text-2xl"
-				on:click={() => (open = true)}>􀏛</button
+				on:click={() => (open = true)}><img src="/image/Drawer.svg" alt="open a drawer" /></button
 			>
 			<Drawer bind:open>
 				<Menu {list} class="py-6 [&_*]:text-2xl [&>li]:mb-4" />
