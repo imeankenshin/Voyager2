@@ -26,13 +26,11 @@
 	<nav
 		class="fixed top-0 left-0 z-50 grid w-full grid-cols-2 justify-between bg-gradient-to-b from-white to-transparent px-4 py-3 dark:from-slate-800 [&_*]:outline-none"
 	>
-		<a class="logo flex items-center" href="/">
-			<img
-				class="mr-2 h-10 translate-y-[2px] hover:animate-bounce"
-				src="/image/Advenccre.svg"
-				alt="Advenccre icon"
-			/>
-			<span class="font-marker text-2xl font-semibold hover:animate-pulse">Advencure</span>
+		<a class="logo flex w-fit items-center" href="/">
+			<img class="mr-2 h-10 translate-y-[2px]" src="/image/Advenccre.svg" alt="Advenccre icon" />
+			<span class="font-marker text-2xl font-semibold focus-within:text-red-500 hover:animate-pulse"
+				>Advencure</span
+			>
 		</a>
 		<Menu {list} class="hidden items-center md:flex md:justify-end" />
 		<div class="flex items-center justify-end md:hidden">
