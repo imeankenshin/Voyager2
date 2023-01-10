@@ -13,10 +13,10 @@
 
 <svelte:head>
 	<meta name="description" content={content.desc} />
-	<meta name="og:title" content={`Advenccre - ${content.title}`} />
+	<meta name="og:title" content={`Voyager2 - ${content.title}`} />
 	<meta name="og:type" content={content.type} />
 	<!--* Below is about Twitter -->
-	<meta name="twitter:title" content={`Advenccre - ${content.title}`} />
+	<meta name="twitter:title" content={`Voyager2 - ${content.title}`} />
 	<meta name="twitter:description" content={'desc'} />
-	<title>{`Advenccre - ${content.title}`}</title>
+	<title>{`Voyager2 - ${content.title}`}</title>
 </svelte:head>

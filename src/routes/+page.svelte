@@ -12,12 +12,11 @@
 <main class="[&>section]:h-[110vh] [&>section]:min-h-max">
 	<section class="grid max-h-screen min-h-[28rem] place-items-center text-center">
 		<div class="flex flex-col items-center" style:background-color="theme(colors.red.300)">
-			<img src="/image/Advenccre.svg" alt="bandana" class="w-4/5 max-w-[18rem] select-none" />
-			<h1
-				class="mb-4 -mt-6 animate-fadein font-marker text-5xl font-semibold sm:-mt-16 sm:text-8xl"
-			>
-				Advencure
-			</h1>
+			<img
+				src="/Voyager2.svg"
+				alt="Voyager2 logo"
+				class="relative mx-12 w-full max-w-3xl animate-fadein select-none"
+			/>
 			<p style:animation-duration="2.2s" class="animate-fadein text-lg delay-200">
 				Time to start your develop journey.
 			</p>
