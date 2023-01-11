@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import ComingSoon from '../layout/ComingSoon.svelte';
 	import PageDesc from '../layout/PageDesc.svelte';
 	import { onMount } from 'svelte';
+	import Switch from '$lib/components/Switch/Switch.svelte';
+	import IconCard from './components/IconCard.svelte';
 
 	onMount(() => {
 		const searchInput = document.getElementById('search');
@@ -18,9 +20,26 @@
 			}
 		});
 	});
-
-	import IconCard from './components/IconCard.svelte';
+	const icons: { name: string; code: string }[] = [
+		{
+			name: 'yes',
+			code: ''
+		},
+		{
+			name: 'no',
+			code: ''
+		},
+		{
+			name: 'iof',
+			code: ''
+		},
+		{
+			name: 'hello',
+			code: ''
+		}
+	];
 	let value = '';
+	let yep = true;
 </script>
 
 <PageDesc
@@ -34,9 +53,9 @@
 	<div role="search" class="flex justify-center py-24">
 		<label
 			for="search"
-			class="mx-6 flex w-full max-w-2xl items-center rounded-lg px-4 py-3  outline outline-2 outline-gray-400 focus-within:outline-[3px] focus-within:outline-sky-400"
+			class="mx-6 flex w-full max-w-2xl items-center rounded-lg border-2 border-gray-400  px-4 py-3 focus-within:border-sky-400"
 		>
-			<span class="mr-4 flex h-7 w-7 items-center dark:[&_*]:fill-white">
+			<span class="mr-4 flex h-7 w-7 items-center [&_*]:fill-black dark:[&_*]:fill-white">
 				<svg
 					id="q"
 					data-name="glass-outline"
@@ -63,15 +82,15 @@
 	</div>
 	<div class="mx-4 flex md:mx-8">
 		<article class="mx-auto flex flex-wrap justify-around py-6">
-			<IconCard title="trashbox" />
-			<IconCard title="trashbox" />
-			<IconCard title="trashbox" />
-			<IconCard title="trashbox" />
-			<IconCard title="trashbox" />
-			<IconCard title="trashbox" />
+			{#each icons as icon}
+				<IconCard title={icon.name} icon={icon.code} />
+			{/each}
 		</article>
-		<div class="ml-6 hidden w-1/3 max-w-lg p-3 lg:block">
+		<div
+			class="sticky top-20 right-0 mb-20 ml-4 hidden h-fit w-1/3 max-w-lg rounded-lg bg-slate-200 p-6 dark:bg-slate-500 lg:block"
+		>
 			<h2>undefinded</h2>
+			<Switch bind:checked={yep} label="Outlined:" />
 		</div>
 	</div>
 </main>
