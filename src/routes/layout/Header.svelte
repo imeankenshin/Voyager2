@@ -27,7 +27,7 @@
 		class="fixed top-0 left-0 z-50 grid w-full grid-cols-2 justify-between bg-gradient-to-b from-white to-transparent px-4 py-3 dark:from-slate-800 [&_*]:outline-none"
 	>
 		<a class="logo flex w-fit items-center" href="/">
-			<img class="mr-2 h-24 translate-y-[2px]" src="/Voyager2.en.svg" alt="Advenccre icon" />
+			<img class="mr-2 h-12 translate-y-[2px]" src="/Voyager2.logo.svg" alt="Advenccre icon" />
 			<!-- <span class="font-marker text-2xl font-semibold focus-within:text-red-500 hover:animate-pulse"
 				>Advencure</span
 			> -->
