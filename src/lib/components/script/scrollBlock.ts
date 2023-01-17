@@ -7,7 +7,7 @@ export function scrollBlock(a: boolean) {
 		if (a) {
 			document.body.style.overflow = 'hidden';
 			if (isHigherThanView && desktop) {
-				document.body.style.paddingRight = '0.75rem';
+				document.body.style.paddingRight = '0';
 			}
 		} else {
 			document.body.style.overflow = 'auto';

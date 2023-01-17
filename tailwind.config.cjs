@@ -6,6 +6,22 @@ module.exports = {
 	important: false,
 	theme: {
 		extend: {
+			fontSize: {
+				body: [
+					'1rem',
+					{
+						lineHeight: '1.75rem',
+						fontWeight: '400'
+					}
+				],
+				btn: [
+					'1rem',
+					{
+						lineHeight: '1.5rem',
+						fontWeight: '600'
+					}
+				]
+			},
 			fontFamily: {
 				marker: 'PermanentMarker'
 			},
