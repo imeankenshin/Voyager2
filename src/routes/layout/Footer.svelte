@@ -1,5 +1,5 @@
 <footer
-	class="grid grid-cols-1 justify-between bg-lime-700 py-8 px-2 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 [&>*]:mx-4 [&_*]:text-white"
+	class="grid grid-cols-1 justify-between bg-red-600 py-8 px-2 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 [&>*]:mx-4 [&_*]:text-white"
 >
 	<div>
 		<p class="mb-2 border-b-2 border-white border-opacity-60 pb-1 text-white">Pages:</p>

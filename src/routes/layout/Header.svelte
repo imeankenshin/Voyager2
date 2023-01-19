@@ -4,10 +4,6 @@
 	let open: boolean = false;
 	const list: { link: string; title: string }[] = [
 		{
-			link: '/',
-			title: 'home'
-		},
-		{
 			link: '/docs',
 			title: 'docs'
 		},

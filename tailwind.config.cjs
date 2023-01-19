@@ -8,7 +8,7 @@ module.exports = {
 		extend: {
 			fontSize: {
 				body: [
-					'1rem',
+					'1.125rem',
 					{
 						lineHeight: '1.75rem',
 						fontWeight: '400'
