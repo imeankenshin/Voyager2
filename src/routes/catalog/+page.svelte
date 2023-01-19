@@ -2,7 +2,6 @@
 	import ComingSoon from '../layout/ComingSoon.svelte';
 	import PageDesc from '../layout/PageDesc.svelte';
 	import { onMount } from 'svelte';
-	import Switch from '$lib/components/Switch/Switch.svelte';
 	import IconCard from './components/IconCard.svelte';
 
 	onMount(() => {
@@ -38,8 +37,21 @@
 			code: ''
 		}
 	];
-	let value = '';
-	let yep = true;
+	let results: { name: string; code: string }[] = [];
+	let value: string | null;
+
+	$: if (value) {
+		const j = () => {
+			let a: { name: string; code: string }[] = [];
+			for (let i = 0; i <= icons.length - 1; i++) {
+				if (value == icons[i].name) {
+					a.push(icons[i]);
+				}
+			}
+			return a;
+		};
+		results = j();
+	}
 </script>
 
 <PageDesc
@@ -80,18 +92,16 @@
 			<kbd>/</kbd>
 		</label>
 	</div>
-	<div class="mx-4 flex md:mx-8">
-		<article class="mx-auto flex flex-wrap justify-around py-6">
+	<article class="mx-auto flex flex-wrap justify-around py-6">
+		{#if results.length > 0}
+			{#each results as icon}
+				<IconCard title={icon.name} icon={icon.code} />
+			{/each}
+		{:else}
 			{#each icons as icon}
 				<IconCard title={icon.name} icon={icon.code} />
 			{/each}
-		</article>
-		<div
-			class="sticky top-20 right-0 mb-20 ml-4 hidden h-fit w-1/3 max-w-lg rounded-lg bg-slate-200 p-6 dark:bg-slate-500 lg:block"
-		>
-			<h2>undefinded</h2>
-			<Switch bind:checked={yep} label="Outlined:" />
-		</div>
-	</div>
+		{/if}
+	</article>
 </main>
 <ComingSoon />
