@@ -1,12 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 	import { useKonami } from '$lib/components/script/useKonami';
+	import PageDesc from './layout/PageDesc.svelte';
 	let konamaied = false;
 	onMount(() => {
 		useKonami(() => (konamaied = true));
 	});
+	console.info('👆 👇 👇 👇 👈 👉 b a');
 </script>
 
+<PageDesc />
 <main class="grid h-screen place-items-center text-center">
 	<div>
 		<h1 class="mb-6 font-marker text-8xl">404 :-(</h1>
@@ -14,10 +17,9 @@
 		{#if konamaied}
 			<a
 				class="text-3xl font-bold hover:text-amber-400"
-				href="https://www.youtube.com/watch?v=5DlROhT8NgU"
+				href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 				>WOW! YOU ARE SUCH BRILLIANT!!!!! CLICK ME!!!!!!!!!!</a
 			>
 		{/if}
-		<p class="text-white dark:text-slate-700">↑ ↑ ↓ ↓ ← → ← → b a</p>
 	</div>
 </main>

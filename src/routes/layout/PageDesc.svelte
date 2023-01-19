@@ -1,10 +1,9 @@
 <script lang="ts">
-	type PageDescription = {
+	export let content: {
 		desc: string;
 		title: string;
 		type: string;
-	};
-	export let content: PageDescription = {
+	} = {
 		desc: 'no description',
 		title: 'title is undefinded',
 		type: 'website'

@@ -6,7 +6,6 @@
 
 <svelte:head>
 	<meta name="msapplication-TileColor" content={themeColor} />
-	<meta name="theme-color" content={themeColor} />
 	<meta name="og:url" content="https://advenccre.design" />
 	<meta name="referrer" content="origin" />
 	<meta
