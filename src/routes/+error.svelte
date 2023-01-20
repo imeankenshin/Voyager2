@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { useKonami } from '$lib/components/script/useKonami';
 	import PageDesc from './layout/PageDesc.svelte';
 	let konamaied = false;
@@ -7,13 +8,26 @@
 		useKonami(() => (konamaied = true));
 	});
 	console.info('👆 👆 👇 👇 👈 👉 👈 👉 b a');
+	const whatHappeded: () => string | undefined = () => {
+		switch ($page.status) {
+			case 404:
+				return 'The page you are looking for is not founded.';
+				break;
+			case 403:
+				return 'You do not have access rights for this page.';
+				break;
+			case 500:
+				return 'This website looks went wrong. Plese report this bug to github for the website and me.';
+				break;
+		}
+	};
 </script>
 
 <PageDesc />
 <main class="grid h-screen place-items-center text-center">
 	<div>
-		<h1 class="mb-6 font-marker text-8xl">404 :-(</h1>
-		<p class="text-lg">The page you are looking for is not founded.</p>
+		<h1 class="mb-6 font-marker text-8xl">{$page.status} :-(</h1>
+		<p class="text-lg">{whatHappeded()}</p>
 		{#if konamaied}
 			<a
 				class="text-3xl font-bold hover:text-amber-400"
