@@ -6,7 +6,7 @@
 	onMount(() => {
 		useKonami(() => (konamaied = true));
 	});
-	console.info('👆 👇 👇 👇 👈 👉 b a');
+	console.info('👆 👆 👇 👇 👈 👉 👈 👉 b a');
 </script>
 
 <PageDesc />
