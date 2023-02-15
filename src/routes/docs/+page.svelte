@@ -15,7 +15,7 @@
 	<section>
 		<p>
 			Welcome to Voyager2's Documentation! In this page, I will tell you how to use Voyager2's svg
-			icons, and how I designed them.
+			icons, and how I designed them. こんにちは
 		</p>
 	</section>
 	<section>
@@ -59,6 +59,6 @@
 		@apply my-2 max-w-3xl;
 	}
 	.card {
-		@apply m-4 h-48 w-72 rounded-lg border-2 border-gray-200 p-6 text-center shadow-lg dark:border-gray-500 dark:bg-gray-700;
+		@apply m-4 h-48 w-72 rounded-lg p-6 text-center shadow-lg dark:border-gray-500 dark:bg-slate-900;
 	}
 </style>

@@ -11,7 +11,7 @@
 		</ul>
 	</div>
 	<main
-		class="flex w-full max-w-4xl justify-center px-12 py-20 scroll:w-3 scroll:bg-transparent scroll-tb:bg-gray-400/30 [&>*]:w-full"
+		class="flex w-full flex-grow justify-center px-12 py-20 scroll:w-3 scroll:bg-transparent scroll-tb:bg-gray-400/30 [&>*]:w-full"
 	>
 		<slot />
 	</main>

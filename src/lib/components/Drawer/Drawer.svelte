@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let open = false;
 	export let id = 'sidebar';
-	function outClick(node: any) {
+	function clickOutside(node: any) {
 		const handleClick = (event: Event) => {
 			if (!node.contains(event.target) && open == true) {
 				node.dispatchEvent(new CustomEvent('outclick'));
@@ -32,7 +32,7 @@
 <nav
 	{id}
 	tabindex="-1"
-	use:outClick
+	use:clickOutside
 	class="{open
 		? 'right-0 duration-500'
 		: '-right-72 -mr-3 duration-300'} fixed top-0 z-50 block h-full w-64 bg-white px-6 pb-4 transition-all dark:bg-slate-900 md:hidden"
