@@ -1,17 +1,13 @@
 # Voyager2
 
-![Voyager2_Logo](./static/Voyager2.svg)
-
-[![GitHub watchers](https://img.shields.io/github/watchers/LinoRino/voyager2.svg?style=flat-square&logo=github&label=Watch)](https://GitHub.com/LinoRino/voyager2/watchers/)
-[![GitHub stars](https://img.shields.io/github/stars/LinoRino/voyager2.svg?style=flat-square&logo=github&label=Star)](https://GitHub.com/LinoRino/voyager2/stargazers/)
-![License](https://img.shields.io/github/license/LinoRino/voyager2.svg?style=flat-square&label=License)
-
-## Content
-
-- [Voyager2](#voyager2)
-  - [Content](#content)
-  - [Feature](#feature)
-  - [Load map](#load-map)
+<div
+  style="display: grid;
+  place-item: center;
+  text-align: center;"
+>
+  <img src="./static/Voyager2.svg">
+  <p>Simple icons with modern styles.</p>
+</div>
 
 ## Feature
 
