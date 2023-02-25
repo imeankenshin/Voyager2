@@ -20,6 +20,7 @@
 			<p style:animation-duration="2.2s" class="animate-fadein text-lg delay-200">
 				Time to start your develop journey.
 			</p>
+
 			<div
 				class="mt-10 flex flex-col items-center justify-around child:rounded-md child:text-lg child:font-medium sm:flex-row"
 			>
@@ -29,7 +30,7 @@
 				<a href="/docs" class="p-3 max-sm:mt-4">Read Details</a>
 			</div>
 			<p class="flex items-center">
-				<span class="v2-face mr-2 h-6 w-6 text-2xl" /> chat
+				<span class="v2-face mr-1 h-9 w-9 text-3xl" /> chat
 			</p>
 		</div>
 	</section>

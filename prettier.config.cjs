@@ -5,6 +5,6 @@ module.exports = {
 	printWidth: 100,
 	plugins: [require('prettier-plugin-svelte'), require('prettier-plugin-tailwindcss')],
 	pluginSearchDirs: ['.'],
-	overrides: [{ files: '*.{astro,html,svelte,js,ts}', options: { parser: 'svelte' } }],
+	overrides: [{ files: '*.{astro,html,svelte,js,ts}'}],
 	tailwindConfig: './tailwind.config.cjs'
 };
