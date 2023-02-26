@@ -4,6 +4,33 @@
 	import { onMount } from 'svelte';
 	import IconCard from './components/IconCard.svelte';
 
+	type Data = {
+		uid: string;
+		css: string;
+		code: number;
+		svg: {
+			path: string;
+			width: number;
+		};
+		search: string[];
+	};
+
+	let searchVal = '';
+	let searchRes = searchIcon('all');
+
+	async function searchIcon(mode: string, e?: Event): Promise<Data[]> {
+		let result: Data[] = [];
+		e && e.preventDefault();
+		await fetch(`/api/search?q=${searchVal ? searchVal : 'foo'}&mode=${mode}`)
+			.then(async (res) => {
+				result = await res.json();
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+		return result;
+	}
+
 	onMount(() => {
 		const searchInput = document.getElementById('search');
 		window.addEventListener('keyup', (e) => {
@@ -19,39 +46,6 @@
 			}
 		});
 	});
-	const icons: { name: string; code: string }[] = [
-		{
-			name: 'yes',
-			code: ''
-		},
-		{
-			name: 'no',
-			code: ''
-		},
-		{
-			name: 'iof',
-			code: ''
-		},
-		{
-			name: 'hello',
-			code: ''
-		}
-	];
-	let results: { name: string; code: string }[] = [];
-	let value: string | null;
-
-	$: if (value) {
-		const j = () => {
-			let a: { name: string; code: string }[] = [];
-			for (let i = 0; i <= icons.length - 1; i++) {
-				if (value == icons[i].name) {
-					a.push(icons[i]);
-				}
-			}
-			return a;
-		};
-		results = j();
-	}
 </script>
 
 <PageDesc
@@ -62,7 +56,13 @@
 	}}
 />
 <main>
-	<div role="search" class="flex justify-center py-24">
+	<!-- Search area -->
+	<form
+		role="search"
+		class="flex justify-center py-24"
+		on:submit={(e) => (searchRes = searchIcon('start', e))}
+	>
+		<!-- Searcj Input -->
 		<label
 			for="search"
 			class="mx-6 flex w-full max-w-2xl items-center rounded-lg border-2 border-gray-400  px-4 py-3 focus-within:border-sky-400"
@@ -83,7 +83,7 @@
 				type="text"
 				role="searchbox"
 				name="search"
-				bind:value
+				bind:value={searchVal}
 				id="search"
 				placeholder="Search icons"
 				autocomplete="off"
@@ -91,17 +91,20 @@
 			/>
 			<kbd>/</kbd>
 		</label>
-	</div>
-	<article class="mx-auto flex flex-wrap justify-around py-6">
-		{#if results.length > 0}
-			{#each results as icon}
-				<IconCard title={icon.name} icon={icon.code} />
-			{/each}
-		{:else}
-			{#each icons as icon}
-				<IconCard title={icon.name} icon={icon.code} />
-			{/each}
-		{/if}
+	</form>
+	<article class="mx-auto flex flex-wrap justify-start py-6">
+		{#await searchRes}
+			<p>Loading...</p>
+		{:then items}
+			{#if items}
+				{#each items as item}
+					<IconCard title={item.css} />
+				{/each}
+			{:else}
+				<p>Nothin</p>
+			{/if}
+		{:catch err}
+			<h2>Woops! something went wrong...</h2>
+		{/await}
 	</article>
 </main>
-<ComingSoon />
