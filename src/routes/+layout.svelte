@@ -24,5 +24,5 @@
 
 <style global>
 	@import url('./app.pcss');
-	@import url('../lib/icons/css/voyager2.css');
+	@import url('../icons/css/voyager2.css');
 </style>
