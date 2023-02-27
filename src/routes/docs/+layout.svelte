@@ -7,7 +7,7 @@
 			<li><a href="/docs/usage"><strong>How 2 use</strong></a></li>
 			<li><a href="/docs/design"><strong>Design system</strong></a></li>
 			<li><a href="/docs/history"><strong>History</strong></a></li>
-			<li><a href="/docs/motto"><strong>Motto</strong></a></li>
+			<li><a href="/docs/rule"><strong>Rule</strong></a></li>
 		</ul>
 	</div>
 	<main
