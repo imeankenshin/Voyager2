@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let label: String | undefined = undefined;
+	export let label: string | undefined = undefined;
 	export let onClick: (
 		event: MouseEvent & {
 			currentTarget: EventTarget & HTMLButtonElement;

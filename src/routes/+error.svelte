@@ -14,7 +14,7 @@
 		{#if konamaied}
 			<a
 				class="text-3xl font-bold hover:text-amber-400"
-				href="https://www.youtube.com/watch?v=5DlROhT8NgU"
+				href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 				>WOW! YOU ARE SUCH BRILLIANT!!!!! CLICK ME!!!!!!!!!!</a
 			>
 		{/if}

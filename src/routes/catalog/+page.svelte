@@ -1,9 +1,7 @@
 <script lang="ts">
-	import ComingSoon from '../layout/ComingSoon.svelte';
 	import PageDesc from '../layout/PageDesc.svelte';
 	import { onMount } from 'svelte';
 	import IconCard from './components/IconCard.svelte';
-
 	type Data = {
 		uid: string;
 		css: string;
@@ -14,11 +12,11 @@
 		};
 		search: string[];
 	};
-
+	type Mode = string | 'perfect' | 'part' | 'start' | 'end' | 'all' | null;
 	let searchVal = '';
 	let searchRes = searchIcon('all');
 
-	async function searchIcon(mode: string, e?: Event): Promise<Data[]> {
+	async function searchIcon(mode: Mode, e?: SubmitEvent): Promise<Data[]> {
 		let result: Data[] = [];
 		e && e.preventDefault();
 		await fetch(`/api/search?q=${searchVal ? searchVal : 'foo'}&mode=${mode}`)
@@ -60,12 +58,14 @@
 	<form
 		role="search"
 		class="flex justify-center py-24"
-		on:submit={(e) => (searchRes = searchIcon('start', e))}
+		on:submit={(e) => {
+			searchRes = searchIcon(searchVal ? 'start' : 'all', e);
+		}}
 	>
 		<!-- Searcj Input -->
 		<label
 			for="search"
-			class="mx-6 flex w-full max-w-2xl items-center rounded-lg border-2 border-gray-400  px-4 py-3 focus-within:border-sky-400"
+			class="mx-6 flex w-full max-w-2xl items-center rounded-lg border-2 border-gray-400  px-4 py-3 focus-within:border-sky-400 focus-within:outline-2"
 		>
 			<span class="mr-4 flex h-7 w-7 items-center [&_*]:fill-black dark:[&_*]:fill-white">
 				<svg
@@ -92,19 +92,29 @@
 			<kbd>/</kbd>
 		</label>
 	</form>
-	<article class="mx-auto flex flex-wrap justify-start py-6">
-		{#await searchRes}
-			<p>Loading...</p>
-		{:then items}
-			{#if items}
-				{#each items as item}
-					<IconCard title={item.css} />
-				{/each}
-			{:else}
-				<p>Nothin</p>
-			{/if}
-		{:catch err}
-			<h2>Woops! something went wrong...</h2>
-		{/await}
-	</article>
+	<!--* Icons article *-->
+	<div class="flex">
+		<article
+			class="mx-6 grid w-full grid-cols-4 flex-wrap justify-start py-6 max-md:grid-cols-3 max-sm:grid-cols-2 xl:grid-cols-5"
+		>
+			{#await searchRes}
+				<div class="flex col-span-5 justify-center items-center">
+					<p class="text-4xl text-center">Loading...</p>
+				</div>
+			{:then items}
+				{#if items.length > 0}
+					{#each items as item}
+						<IconCard title={item.css} />
+					{/each}
+				{:else}
+					<div class="flex col-span-5 justify-center items-center">
+						<p class="text-4xl text-center">No Icons Found</p>
+					</div>
+				{/if}
+			{:catch err}
+				<h2>Woops! something went wrong...</h2>
+				<p>{err.code}</p>
+			{/await}
+		</article>
+	</div>
 </main>
