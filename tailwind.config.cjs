@@ -27,15 +27,15 @@ module.exports = {
 			},
 			keyframes: {
 				fadein: {
-					from: { translate: '0 2.5rem', opacity: '0' },
+					from: { translate: '0 5rem', opacity: '0' },
 					to: { transform: '0 0', opacity: '1' }
 				},
 				fadeinLeft: {
-					from: { translate: '2.5rem 0', opacity: '0' },
+					from: { translate: '5rem 0', opacity: '0' },
 					to: { transform: '0 0', opacity: '1' }
 				},
 				fadeinRight: {
-					from: { translate: '-2.5rem 0', opacity: '0' },
+					from: { translate: '-5rem 0', opacity: '0' },
 					to: { transform: '0 0', opacity: '1' }
 				}
 			},
