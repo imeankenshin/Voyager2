@@ -122,7 +122,7 @@
 	</section>
 	<section class="group grid items-center max-lg:grid-rows-3 lg:grid-cols-2">
 		<div class="mx-6 grid h-full content-center items-center">
-			<h2 class="mb-10 text-6xl font-bold group-[.show]:animate-fadeinRight">
+			<h2 class="mb-10 p-0 text-6xl font-bold group-[.show]:animate-fadeinRight">
 				Variety, modern, simple, useful.
 			</h2>
 			<p class="group-[.show]:animate-fadeinRight">
