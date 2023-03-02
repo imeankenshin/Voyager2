@@ -1,7 +1,3 @@
-<script>
-	import './style.css';
-</script>
-
 <div class="flex">
 	<div
 		role="doc-chapter"
