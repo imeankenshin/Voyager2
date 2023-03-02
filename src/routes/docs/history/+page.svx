@@ -1,0 +1,10 @@
+---
+  title: History
+---
+<script>
+  import "$lib/style.css"
+</script>
+
+# {title}
+
+hello wolrd!

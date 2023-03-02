@@ -9,7 +9,7 @@
 		<li role="menuitem">
 			<a
 				href={i.link}
-				class="mx-3 text-lg font-semibold transition-all hover:text-red-500 focus:text-red-500"
+				class="mx-3 text-lg font-medium transition-all hover:text-red-500 focus:text-red-500"
 				>{i.title}</a
 			>
 		</li>
