@@ -12,6 +12,7 @@
 		content="https://www.google.co.jp/images/branding/googleg/1x/googleg_standard_color_128dp.png"
 		itemprop="image"
 	/>
+	<link rel="stylesheet" href="/icons/css/voyager2.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link
@@ -29,5 +30,4 @@
 
 <style global>
 	@import url('./app.pcss');
-	@import url('../icons/css/voyager2.css');
 </style>
