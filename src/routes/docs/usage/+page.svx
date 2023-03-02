@@ -1,5 +1,6 @@
 <script>
 	import ComingSoon from '../../layout/ComingSoon.svelte';
+	import "$lib/style.css"
 </script>
 
 <ComingSoon />
