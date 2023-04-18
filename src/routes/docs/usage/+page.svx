@@ -1,6 +1,11 @@
 <script>
 	import ComingSoon from '../../layout/ComingSoon.svelte';
-	import "$lib/style.css"
+	import Code from '$lib/doc/Code.svelte';
+	import '$lib/style.css';
 </script>
 
-<ComingSoon />
+# How to use
+
+In v0.1, This component only can use on web. 
+
+<Code file="html" code='<link rel="stylesheet" href="">' />

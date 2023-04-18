@@ -19,13 +19,6 @@
 		</ul>
 	</div>
 	<div class="mt-12 flex items-center sm:col-span-3">
-		<div class="flex">
-			<span class="mr-1 font-['SF_Pro'] font-normal">􀆪</span>
-			<select name="lang" id="lang" class="bg-transparent">
-				<option value="japan">日本語</option>
-				<option value="english">English</option>
-			</select>
-		</div>
 		<ul class="flex w-full justify-end [&>*]:ml-5">
 			<li><a href="/term">Terms of Service</a></li>
 			<li><p class="text-base text-white text-opacity-80">Copyright © Advenccre, Inc.</p></li>
